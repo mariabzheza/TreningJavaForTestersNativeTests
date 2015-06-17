@@ -13,6 +13,7 @@ public class TestContactCreation extends TestBase{
 		Contact contact = new Contact().setFirstName("tester").setLastName("tester");
 		app.getContactHelper().createContact(contact);
 		Contact createdContact = app.getContactHelper().getFirstContact();
+		app.getContactHelper().closeApplication();
 		Assert.assertEquals(contact, createdContact);
 	}
 
