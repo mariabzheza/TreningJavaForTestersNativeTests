@@ -12,6 +12,8 @@ public class ApplicationManager {
 	private ContactHelper contactHelper;
 
 	private ProcessHelper processHelper;
+
+	private AutoItHelper autoItHelper;
 	
 	public static ApplicationManager getInstance(Properties props) throws IOException {
 		if (singleton == null) {
@@ -55,5 +57,11 @@ public class ApplicationManager {
 		}
 		return contactHelper;
 	}
-
+	
+	public AutoItHelper getAutoitHelper() {
+		if (autoItHelper == null){
+			autoItHelper = new AutoItHelper(this);
+		}
+		return autoItHelper;
+	}
 }
